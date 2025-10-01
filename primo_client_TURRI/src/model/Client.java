@@ -1,0 +1,56 @@
+package model;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
+
+public class Client {
+	
+	private Socket socket;
+	private static final int PORT = 8888;
+	private static final String HOST = "localhost";
+	
+	public Client() {
+	}
+	
+	
+	public void connetti() {
+		try {
+			socket = new Socket(HOST, PORT);
+			System.out.println("Connesso al server " + HOST + " nella porta " + PORT);
+		} catch(IOException e) {
+			System.out.println("Errore alla connessione al server " + HOST + " nella porta " + PORT);
+		}
+	}
+	
+	public void ricevi() {
+		BufferedReader input = null;
+		PrintWriter output = null;
+		try {
+			input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			String responseMessage = input.readLine();
+			System.out.println("Messaggio ricevuto: " + responseMessage);
+			
+			//ora si manda una specie di ACK
+			output = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+			output.println("Ricevuto dal client. :)");
+			System.out.println("Dato ricevuto, ACK mandato.");
+		} catch(IOException e) {
+			System.out.println("Errore nella ricezione dei messaggi.");
+		} finally {
+			chiudiTutto();
+		}
+	}
+	
+	public void chiudiTutto() {
+		try {
+			socket.close();
+		} catch (IOException e) {
+			System.out.println("Errore nella chiusura della comunicazione.");
+		}
+	}
+	
+}

@@ -1,0 +1,54 @@
+package model;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+//import java.time.LocalDate;
+
+
+public class Server {
+
+	private ServerSocket myServer;
+	private static final int PORT = 8888;
+	
+	public Server() {
+		try {
+			myServer = new ServerSocket(PORT);
+			System.out.println("Servizio avviato su porta: " + PORT);
+		} catch(IOException e) {
+			System.out.println("Errore attivazione server: " + e.getMessage());
+		}
+	}
+	
+	public Socket attendi() {
+		while(true) { //attesa attiva per la connessione
+			Socket clientSocket;
+			try {
+				clientSocket = myServer.accept();
+				System.out.println("Connessione avviata con: " + clientSocket.getInetAddress());
+				return clientSocket;
+			} catch (IOException e) {
+				System.out.println("Errore nell'accettazione della connessione: " + e.getMessage());
+				return null;
+			}
+		}
+	}
+	
+	public void comunica(Socket clientSocket, String msg) {
+		try {
+			PrintWriter output = new PrintWriter(clientSocket.getOutputStream(), true);
+			output.println(msg);
+			System.out.println("Dati inviati al client.");
+		} catch (IOException e) {
+			System.out.println("Errore nella comunicazione: " + e.getMessage());
+		} finally {
+			try {
+				clientSocket.close();
+			} catch(IOException e) {
+				System.out.println("Errore nella chiusura del socket.");
+			}
+		}
+	}
+	
+}
