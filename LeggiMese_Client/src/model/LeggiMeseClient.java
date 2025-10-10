@@ -33,9 +33,10 @@ public class LeggiMeseClient extends Thread {
 			String msgRecv = "";
 			String msgSend = "";
 			while(true) {
-				msgRecv = "(" + getName() + ") " + in.readLine();
-				
+				msgRecv = in.readLine();
 				if(msgRecv.equals(FIN_MSG)) break;
+				
+				msgRecv = "(" + getName() + ") " +  msgRecv;
 				
 				System.out.println(msgRecv);
 				msgSend = Tastiera.leggiString();

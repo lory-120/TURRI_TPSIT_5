@@ -30,6 +30,7 @@
         </endorsedDirs>
     </libraryInfo>
     <libraryInfo home="C:\Users\loren\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_23.0.1.v20241024-1700\jre" version="23.0.1"/>
+    <libraryInfo home="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502\jre" version="17.0.7"/>
     <libraryInfo home="C:\Program Files\Java\jdk1.8.0_301" version="1.8.0_301">
         <bootpath>
             <entry path="C:\Program Files\Java\jdk1.8.0_301\jre\lib\resources.jar"/>
@@ -63,4 +64,5 @@
         </endorsedDirs>
     </libraryInfo>
     <libraryInfo home="C:\Program Files\Microsoft\jdk-17.0.12.7-hotspot" version="17.0.12"/>
+    <libraryInfo home="C:\eclipse\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.7.v20230425-1502" version="17.0.7"/>
 </libraryInfos>
