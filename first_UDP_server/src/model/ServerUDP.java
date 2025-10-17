@@ -38,7 +38,16 @@ public class ServerUDP {
 		return pacchettoRicevuto;
 	}
 	
-	public void invia(InetAddress clientAddress, int port, String msg) {
+	public void invia(InetAddress clientAddress, int port, String msg) throws IOException {
+		String msgMaiusc = msg.toUpperCase();
+		byte[] datiDaInviare = msgMaiusc.getBytes();
+		DatagramPacket pacchettoDaInviare = new DatagramPacket(datiDaInviare, datiDaInviare.length, clientAddress, port);
 		
+		serverSocketUDP.send(pacchettoDaInviare);
 	}
+	
+	public void chiudi() {
+		serverSocketUDP.close();
+	}
+	
 }
