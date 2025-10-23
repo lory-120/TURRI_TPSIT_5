@@ -40,7 +40,8 @@ private DatagramSocket serverSocketUDP;
 	
 	public void invia(InetAddress clientAddress, int port, String msg) throws IOException {
 
-		String msgSend = elabora(msg);
+		String msgSendResult = Double.toString(elabora(msg));
+		String msgSend = (msgSendResult == "-1") ? "Input errati." : "Il risultato è: " + msgSendResult;
 		
 		byte[] datiDaInviare = msgSend.getBytes();
 		DatagramPacket pacchettoDaInviare = new DatagramPacket(datiDaInviare, datiDaInviare.length, clientAddress, port);
@@ -55,6 +56,14 @@ private DatagramSocket serverSocketUDP;
 		switch(elementi[2]) {
 		case "+":
 			return n1 + n2;
+		case "-":
+			return n1 - n2;
+		case "*":
+			return n1 * n2;
+		case "/":
+			return n1 / n2;
+		default:
+			return -1;
 		}
 	}
 	

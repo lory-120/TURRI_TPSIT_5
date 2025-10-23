@@ -5,6 +5,28 @@ public class Tastiera {
 	private static InputStreamReader reader = new InputStreamReader(System.in);
 	private static BufferedReader tastiera = new BufferedReader(reader);
 	
+	//legge i caratteri
+	public static char leggiChar() {
+		String stringaLetta = null;
+		try {
+			stringaLetta = tastiera.readLine();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return stringaLetta.charAt(0);
+	}
+	public static char leggiChar(String msg) {
+		System.out.print(msg);
+		
+		String stringaLetta = null;
+		try {
+			stringaLetta = tastiera.readLine();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		return stringaLetta.charAt(0);
+	}
+	
 	//legge le stringhe
 	public static String leggiString(String msg) {
 		System.out.print(msg);

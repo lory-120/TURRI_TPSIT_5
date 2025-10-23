@@ -34,11 +34,12 @@
     <fullyQualifiedTypeName name="java.awt.image.DataBufferByte"/>
     <fullyQualifiedTypeName name="java.net.DatagramPacket"/>
     <fullyQualifiedTypeName name="model.ClientUDP"/>
-    <fullyQualifiedTypeName name="presentation.Tastiera"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
-    <fullyQualifiedTypeName name="model.ClientCalcUDP"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="byte"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="model.ServerCalcUDP"/>
     <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="presentation.Tastiera"/>
+    <fullyQualifiedTypeName name="model.ClientCalcUDP"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
