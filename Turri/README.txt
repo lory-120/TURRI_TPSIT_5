@@ -1,0 +1,1 @@
+I comandi sono separati da una virgola (--> , <--) e non da uno spazio.
