@@ -5,8 +5,27 @@
 <title>Sondaggio Culinario</title>
 </head>
 <body>
-	<form action="../">
+	<form action="../SondaggioCulinario" method="get">
+	
+		<h1>Scegli il tuo piatto preferito</h1>
+		<h3>qual è il tuo piatto preferito?</h3>
 		
+		<input type="radio" id="Pizza" name="piattoPreferito" value="Pizza" checked>
+	    <label for="pizza">Pizza</label><br>
+	
+	    <input type="radio" id="Spaghetti" name="piattoPreferito" value="Spaghetti">
+	    <label for="spaghetti">Spaghetti</label><br>
+	
+	    <input type="radio" id="Pastina" name="piattoPreferito" value="Pastina">
+	    <label for="pastina">Pastina</label><br>
+	
+	    <input type="radio" id="Lasagne" name="piattoPreferito" value="Lasagne">
+	    <label for="lasagne">Lasagne</label>
+	    
+	    <p>
+	    	<input type="submit" value="Invia">
+	    	<input type="reset" value="Cancella">
+	    </p>
 	</form>
 </body>
 </html>
