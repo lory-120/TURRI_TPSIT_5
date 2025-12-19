@@ -1,9 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Personale {
+public class Personale implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String matricola;
 	private String dipartimento;
 	private String nominativo;
@@ -11,14 +14,17 @@ public class Personale {
 	private LocalDate dataNascita;
 	private double stipendio;
 	
+	/*
 	public Personale(String matricola, String dipartimenti, String nominativo, String qualifica,
 			LocalDate dataNascita, double stipendio) {
 		
 	}
+	*/
+	
+	//visto che è Serializable, si crea un costruttore vuoto e si agisce con i get/set
+	public Personale() { }
 	
 	
-	
-
 	public String getMatricola() {
 		return matricola;
 	}
@@ -55,5 +61,14 @@ public class Personale {
 	public void setStipendio(double stipendio) {
 		this.stipendio = stipendio;
 	}
+
+
+	//metodo toString
+	@Override
+	public String toString() {
+		return "Personale [matricola=" + matricola + ", dipartimento=" + dipartimento + ", nominativo=" + nominativo
+				+ ", qualifica=" + qualifica + ", dataNascita=" + dataNascita + ", stipendio=" + stipendio + "]";
+	}
+	
 	
 }
