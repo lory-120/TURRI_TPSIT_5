@@ -68,7 +68,6 @@ public class SondaggioCulinario extends HttpServlet {
 		out.println(websiteTail);
 
 		out.close();
-		
 	}
 
 	
