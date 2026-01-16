@@ -7,9 +7,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Servlet implementation class EliminaLibroServlet
- */
 @WebServlet("/EliminaLibroServlet")
 public class EliminaLibroServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="AssicurazioneDB_WANG_TURRI">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="AssicurazioneDB_WANG_TURRI"/>
+        <property name="java-output-path" value="/AssicurazioneDB_WANG_TURRI/build/classes"/>
+    </wb-module>
+</project-modules>
