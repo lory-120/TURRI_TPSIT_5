@@ -1,21 +1,22 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.sql.Date;
+
 public class Polizza implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String id_polizza;
 	private String id_cliente;
-	private LocalDate dt_inizio;
-	private LocalDate dt_fine;
+	private Date dt_inizio;
+	private Date dt_fine;
 	private char periodicita_AST;
 	private int premio_annuo;
 	private String descrizione;
 	
 	public Polizza() {}
 	
-	public Polizza(String id_polizza, String id_cliente, LocalDate dt_inizio, LocalDate dt_fine, char periodicita_AST, int premio_annuo, String descrizione) {
+	public Polizza(String id_polizza, String id_cliente, Date dt_inizio, Date dt_fine, char periodicita_AST, int premio_annuo, String descrizione) {
 		this.id_polizza = id_polizza;
 		this.id_cliente = id_cliente;
 		this.dt_inizio = dt_inizio;
@@ -42,20 +43,20 @@ public class Polizza implements Serializable {
 		this.id_cliente = id_cliente;
 	}
 
-	public LocalDate getDt_inizio() {
+	public Date getDt_inizio() {
 		return dt_inizio;
 	}
 
-	public void setDt_inizio(LocalDate dt_inizio) {
-		this.dt_inizio = dt_inizio;
+	public void setDt_inizio(Date date) {
+		this.dt_inizio = date;
 	}
 
-	public LocalDate getDt_fine() {
+	public Date getDt_fine() {
 		return dt_fine;
 	}
 
-	public void setDt_fine(LocalDate dt_fine) {
-		this.dt_fine = dt_fine;
+	public void setDt_fine(Date date) {
+		this.dt_fine = date;
 	}
 
 	public char getPeriodicita_AST() {

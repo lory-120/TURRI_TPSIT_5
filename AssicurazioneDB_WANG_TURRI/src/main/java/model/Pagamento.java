@@ -1,22 +1,21 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Pagamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String id_pagamento;
 	private String id_polizza;
-	private LocalDate dt_scadenza;
-	private LocalDate dt_pagamento;
-	//non c'è estremi_pagamento
+	private Date dt_scadenza;
+	private Date dt_pagamento;
 	private double importo;
 	private String note;
 	
 	public Pagamento() {}
 	
-	public Pagamento(String id_pagamento, String id_polizza, LocalDate dt_scadenza, LocalDate dt_pagamento, double importo, String note) {
+	public Pagamento(String id_pagamento, String id_polizza, Date dt_scadenza, Date dt_pagamento, double importo, String note) {
 	    this.id_pagamento = id_pagamento;
 	    this.id_polizza = id_polizza;
 	    this.dt_scadenza = dt_scadenza;
@@ -41,19 +40,19 @@ public class Pagamento implements Serializable {
 		this.id_polizza = id_polizza;
 	}
 
-	public LocalDate getDt_scadenza() {
+	public Date getDt_scadenza() {
 		return dt_scadenza;
 	}
 
-	public void setDt_scadenza(LocalDate dt_scadenza) {
-		this.dt_scadenza = dt_scadenza;
+	public void setDt_scadenza(Date date) {
+		this.dt_scadenza = date;
 	}
 
-	public LocalDate getDt_pagamento() {
+	public Date getDt_pagamento() {
 		return dt_pagamento;
 	}
 
-	public void setDt_pagamento(LocalDate dt_pagamento) {
+	public void setDt_pagamento(Date dt_pagamento) {
 		this.dt_pagamento = dt_pagamento;
 	}
 

@@ -1,0 +1,1 @@
+Il file per popolare il DB MySQL con il quale funziona il progetto è quello messo nella stessa posizione di questo file di testo ("polizze.sql"). 

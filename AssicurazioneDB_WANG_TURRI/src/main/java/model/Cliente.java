@@ -11,8 +11,11 @@ public class Cliente implements Serializable {
 	private String email;
 	private String telefono;
 	private String indirizzo;
+	private String cap;
 	private String citta;
 	private String provincia;
+	
+	private int n_polizze;
 	
 	public Cliente() {}
 
@@ -76,6 +79,14 @@ public class Cliente implements Serializable {
 		this.indirizzo = indirizzo;
 	}
 
+	public String getCap() {
+		return cap;
+	}
+
+	public void setCap(String cap) {
+		this.cap = cap;
+	}
+
 	public String getCitta() {
 		return citta;
 	}
@@ -90,6 +101,14 @@ public class Cliente implements Serializable {
 
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
+	}
+
+	public int getN_polizze() {
+		return n_polizze;
+	}
+
+	public void setN_polizze(int n_polizze) {
+		this.n_polizze = n_polizze;
 	}
 
 	public static long getSerialversionuid() {

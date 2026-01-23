@@ -6,31 +6,55 @@ package servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import utilities.PolizzaInesistenteException;
 
-/**
- * Servlet implementation class UpdatePolizza
- */
-public class UpdatePolizza extends HttpServlet {
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet("/UpdatePolizza")
+public class UpdatePolizza extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public UpdatePolizza() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html; charset/UTF-8"); //imposto il contenuto della risposta
+		PrintWriter out = response.getWriter();
+		
+		String idPolizza = request.getParameter("idPolizza");
+		
+		out.println(websiteHead);
+		
+		String HTMLPageTop = "<h1>Estinzione Polizza</h1>"
+				+ "<form action='UpdatePolizza' method='GET'>"
+				+ "<p>ID Polizza assicurativa: <input type='text' name='idPolizza' required></p>"
+				+ "<button type='submit'>Estingui polizza</button>"
+				+ "</form>";
+		out.println(HTMLPageTop);
+		
+		if(idPolizza != null) { //stampa SOLO se trova i campi popolati
+			boolean success;
+			
+			try {
+				accessoDB.estinguiPolizza(idPolizza);
+				success = true;
+			} catch(PolizzaInesistenteException e) {
+				System.err.println("Errore nell'estinzione della polizza: " + e.getMessage());
+				success = false;
+			}
+			
+			if(success) {
+				out.println("<p style='color: green;'>Estinzione riuscita.</p>");
+			} else {
+				out.println("<p style='color: red;'>Estinzione non riuscita.</p>");
+			}
+		}
+		
+		out.println(websiteTail);
 	}
 
 }

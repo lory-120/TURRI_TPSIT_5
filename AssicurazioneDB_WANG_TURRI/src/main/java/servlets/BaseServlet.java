@@ -3,30 +3,37 @@ package servlets;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-/**
- * Servlet implementation class BaseServlet
- */
+import dao.AccessoDB;
+
+@WebServlet("/BaseServlet")
 public class BaseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	protected AccessoDB accessoDB;
+    protected String websiteHead = "<!DOCTYPE html>\r\n"
+    		+ "<html>\r\n"
+    		+ "	<head>\r\n"
+    		+ "		<meta charset=\"UTF-8\">\r\n"
+    		+ "		<title>Assicurazione</title>\r\n"
+    		+ "	</head>\r\n"
+    		+ "	<body>";
+    protected String websiteTail = "	</body>\r\n"
+    		+ "</html>";
+	
+	
     public BaseServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    
+    @Override
+    public void init() throws ServletException {
+    	try {
+            this.accessoDB = new AccessoDB("localhost", "assicurazioni", "root", "");
+            System.out.println("DAO Inizializzato con successo.");
+        } catch (Exception e) {
+            System.out.println("ERRORE INIZIALIZZAZIONE DAO: " + e.getMessage());
+            throw new ServletException(e); //questo avvisa Tomcat che la servlet è KO
+        }
+    }
 
 }

@@ -8,7 +8,9 @@
 		<item key="DIALOG_HEIGHT" value="441"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="Language Servers"/>
 			<item value="Server"/>
+			<item value="Web Services"/>
 		</list>
 	</section>
 </section>
