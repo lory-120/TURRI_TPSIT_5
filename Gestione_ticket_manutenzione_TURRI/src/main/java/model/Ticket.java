@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import dao.GeneratoreID;
+
 public class Ticket implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

@@ -1,6 +1,8 @@
-package model;
+package dao;
 
 import java.util.ArrayList;
+
+import model.Ticket;
 
 public class AccessoTicket {
 
@@ -10,15 +12,6 @@ public class AccessoTicket {
         tickets.add(t);
     }
 	
-	public static boolean segnaFatto(Ticket t) {
-		for(Ticket tt : tickets) {
-			if(tt.equals(t)) {
-				tt.setDone(true);
-				return true;
-			}
-		}
-		return false;
-	}
 	public static boolean segnaFatto(int ID) {
 		for(Ticket t : tickets) {
 			if(t.getID() == ID) {

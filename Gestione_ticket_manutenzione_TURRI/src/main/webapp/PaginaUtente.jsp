@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="model.*, java.util.*" %>
+<%@ page import="model.*, java.util.*, dao.*" %>
 
 <%
     //LOGICA DI RICEZIONE DATI
